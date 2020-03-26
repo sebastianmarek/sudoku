@@ -2,7 +2,8 @@ module.exports = function solveSudoku(matrix) {
 	var possibleNumbers = [0,0,0,0,0,0,0,0,0,0];
 	var firstEmpty;
 
-	if(isSolved(matrix)) {
+	if(matrix && isMatrixSolved(matrix)) {
+		console.log(matrix);
 		return matrix;
 	}
 
@@ -20,7 +21,7 @@ module.exports = function solveSudoku(matrix) {
 
 }
 
-function isSolved(matrix){
+function isMatrixSolved(matrix){
 	for(var i = 0; i < 9; i++){
 		for(var j = 0; j < 9; j++){
 			if(matrix[i][j] == 0){
